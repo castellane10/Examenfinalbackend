@@ -6,28 +6,27 @@ Este componente es un backend desarrollado con Spring Boot que consume un servic
 
 ## Requisitos Previos
 
-- **Java JDK** (versión recomendada: 17 o superior)
+- **Java JDK** (versión: 17)
 - **Maven** (para gestionar dependencias y construir el proyecto)
-- **Base de datos** MySQL o PostgreSQL
-- **Un IDE para Java** (como IntelliJ IDEA o Eclipse)
-- **Postman** (opcional, para probar los endpoints)
+- **Base de datos** H2
+
 
 ## Instalación
 
 Clona el repositorio del backend:
 
 git clone <https://github.com/castellane10/Examenfinalbackend>
+
 cd <Examenfinalbackend>
 
-# Configuración
-Asegúrate de configurar correctamente las credenciales de la base de datos en el archivo application.properties.
+
 
 # Construcción y Ejecución
 Construye el proyecto con Maven
-mvn clean install
+./mvnw clean install
 
 # Ejecuta la aplicación:
-mvn spring-boot:run
+./mvnw spring-boot:run
 
 # El backend estará disponible en la siguiente URL de la API:
 http://localhost:8080/api/soap/tipocambio
@@ -38,3 +37,5 @@ Para acceder a la consola de la base de datos H2, utiliza la siguiente URL:
 http://localhost:8080/h2-console
 Las credenciales para la consola H2 están en el archivo application.properties.
 
+# Funcionamiento con frontend
+Mantener ejecutado el proyecto del backend para consumir la Api en el proyecto del frontend.
