@@ -16,8 +16,8 @@ Este componente es un backend desarrollado con Spring Boot que consume un servic
 
 Clona el repositorio del backend:
 
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_DIRECTORIO>
+git clone <https://github.com/castellane10/Examenfinalbackend>
+cd <Examenfinalbackend>
 
 # Configuración
 Asegúrate de configurar correctamente las credenciales de la base de datos en el archivo application.properties.
