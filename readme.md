@@ -17,9 +17,6 @@ Clona el repositorio del backend:
 
 git clone <https://github.com/castellane10/Examenfinalbackend>
 
-cd <Examenfinalbackend>
-
-
 
 # Construcción y Ejecución
 Construye el proyecto con Maven
