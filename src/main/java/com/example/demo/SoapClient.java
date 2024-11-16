@@ -82,7 +82,7 @@ public class SoapClient {
     
 
     // Método auxiliar para extraer el tipo de cambio del XML de respuesta
-    private String parseExchangeRateFromResponse(String response) {
+    public String parseExchangeRateFromResponse(String response) {
         // Busca las etiquetas <TipoCambioDiaStringResult>
         String startTag = "<TipoCambioDiaStringResult>";
         String endTag = "</TipoCambioDiaStringResult>";
@@ -116,5 +116,26 @@ public class SoapClient {
         // Retorna el valor dentro de <referencia>
         return decodedXml.substring(refStartIndex + referenceStartTag.length(), refEndIndex);
     }
+    // Método para extraer <fecha> del XML decodificado
+    public String parseDateFromResponse(String response) {
+        // Decodifica el contenido HTML
+        String decodedXml = Jsoup.parse(response).text();
+        System.out.println("XML decodificado: " + decodedXml);
+    
+        String dateStartTag = "<fecha>";
+        String dateEndTag = "</fecha>";
+    
+        int startIndex = decodedXml.indexOf(dateStartTag);
+        int endIndex = decodedXml.indexOf(dateEndTag);
+    
+        if (startIndex == -1 || endIndex == -1 || startIndex + dateStartTag.length() > endIndex) {
+            throw new IllegalArgumentException("El XML decodificado no contiene la etiqueta <fecha>");
+        }
+    
+        return decodedXml.substring(startIndex + dateStartTag.length(), endIndex);
+    }
+    
+    
+
     
 }
